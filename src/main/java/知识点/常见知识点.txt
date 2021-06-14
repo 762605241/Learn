@@ -46,24 +46,31 @@ HTTP三次握手，四次挥手 执行流程
         判断奇偶性, n & 1 结果=1为奇数,结果=0为偶数。
         取模运算
             n & (m - 1) 其中m必须为2的正整数次幂
+        n & (n - 1) 将n的二进制中, 为1的最低位, 从1变成0。循环次数就是n的二进制中1的个数
+        n & -n 获取n二进制中最低位的1对应的值。如果值=n, 则n是2的整数次幂;否则值=1
     ^运算
         交换两个数, 原理一个数,^两次相同值结果不变。
+        一个数亦或两个相同数值,其结果不变 a ^ b ^ b = a
     ~运算
         取相反数
 
-Integer 、Long中
-highestOneBit、lowestOneBit、numberOfLeadingZeros、bitCount、reverse等
-HashMap扩容
-
-Spring项目使用了Tomcat么？微服务使用了么？ Spring项目部署方式？
+Spring项目使用了Tomcat么？
+    SpringBoot内置了tomcat 直接打包成 jar 运行
 
 LRU算法 在操作系统的应用
 
 操作系统 存储结构 使用方式
 
 位运算在jdk源码中的应用
+    Integer 、Long中
+    highestOneBit、lowestOneBit、numberOfLeadingZeros、bitCount、reverse等
+    HashMap扩容
 
-双端数组
+双端队列
+    Deque接口。ArrayDeque、LinkedList实现Deque接口。
+    可以用作队列、栈(推荐使用Deque而不是Stack)。
+优先级队列
+    对添加进队列的任务元素进行排序(大顶堆、小顶堆), 按优先级高(低)取出任务
 
 工作窃取模式 工作窃取队列  实现原理 与 应用场景
 
