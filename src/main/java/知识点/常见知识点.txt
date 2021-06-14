@@ -1,0 +1,75 @@
+HTTP RPC
+	gRPC是RPC框架的一种，由Google实现(开源)。基于HTTP协议，底层使用Netty框架支持。
+	Dubbo是RPC框架的一种，由阿里试下(开源)。远程接口基于Java Interface、Spring框架开发。
+	HTTP服务，也就是常说的RESTFul风格的服务接口。
+	RPC (远程过程调用)基于TCP/IP协议。适用于大量接口间调用，系统与系统之间调用关系复杂。需要提示系统间交互性能。接口请求长连接，不需要每次通信像HTTP三次握手，有效减少网络开销。一般针对大型企业，复杂的系统间调用。
+	HTTP 基于HTTP协议。针对小型系统，简化开发流程，开发方便快捷。
+	问题：
+		Spring的接口间调用属于哪个？微服务？Feign调用？
+		web Service又是什么？WSDL是什么？
+			web Service 三要素：SOAP协议、WSDD、UDDI。
+				SOAP：简单对象访问协议。SOAP是基于XML的一种协议。用于定义WEB间交换信息的格式。
+				WSDL：描述如何访问接口。
+				UDDI：用来管理、分发、查询web Service
+web Service和RESTFul
+	Web Service 是RPC的一种实现方式，严格的定义了传输数据的格式。
+	RESTful 简化了 web service 的设计，它不再需要 wsdl ，也不再需要 soap 协议，而是通过最简单的 http 协议传输数据 ( 包括 xml 或 json) 。既简化了设计，也减少了网络传输量（因为只传输代表数据的 xml 或 json ，没有额外的 xml 包装）。
+	RESTFul规范了web Service接口的调用方式，如post、get、put、delete等，更加明确的调用的类型。
+OSI网络七层协议 与 TCP/IP网络协议
+	https://blog.csdn.net/qq_28935065/article/details/77201989
+	https://blog.csdn.net/uc555666888/article/details/89810512
+
+HTTP三次握手，四次挥手 执行流程
+	https://www.cnblogs.com/onesea/p/13053697.html
+计算机网络基础
+	https://www.runoob.com/w3cnote/summary-of-network.html#_label11
+全双工模式 半双工模式、单工模式
+	https://baike.baidu.com/item/%E5%85%A8%E5%8F%8C%E5%B7%A5%E6%A8%A1%E5%BC%8F/1153712?fr=aladdin
+
+负载均衡
+	思想：建立某种一对多的映射机制：一个请求的入口映射到多个处理请求的节点，从而实现分而治之
+	集群如何实现负载均衡
+	实现负载均衡的几种方式
+	    https://www.cnblogs.com/sy270321/p/12581011.html
+		轮询、加权轮询、最小连接数、随机、源地址散列、一致性散列
+	各层使用的负载均衡
+		F5 硬件负载均衡 并发能力百万级别
+		Nginx 应用层负载均衡 并发能里5万
+	F5是什么
+	https://blog.csdn.net/weixin_29615645/article/details/112676087
+	https://www.cnblogs.com/mr-ziyoung/p/13719788.html
+	DNS
+		DNS是最简单的负载均衡，一般来实现地理级别的均衡，如北京的用户访问北京的机房，而深圳的用户访问深圳的机房。DNS的本质就是解析同一个域名可以返回不同的IP地址。DNS的缺点是，更新缓慢，因此只做比较固定的地理级别的均衡。
+
+位运算
+    &运算
+        判断奇偶性, n & 1 结果=1为奇数,结果=0为偶数。
+        取模运算
+            n & (m - 1) 其中m必须为2的正整数次幂
+    ^运算
+        交换两个数, 原理一个数,^两次相同值结果不变。
+    ~运算
+        取相反数
+
+Integer 、Long中
+highestOneBit、lowestOneBit、numberOfLeadingZeros、bitCount、reverse等
+HashMap扩容
+
+Spring项目使用了Tomcat么？微服务使用了么？ Spring项目部署方式？
+
+LRU算法 在操作系统的应用
+
+操作系统 存储结构 使用方式
+
+位运算在jdk源码中的应用
+
+双端数组
+
+工作窃取模式 工作窃取队列  实现原理 与 应用场景
+
+Java 死循环 使用for还是where
+	本质相同，编译后的class文件内容相同。但是代码执行方式依赖于编译器，有的编译器中while是使用寄存器实现的，指令会比较多，性能比较for(;;)较差，所以在使用中还是建议使用for(;;)
+
+jdk的自旋锁
+
+BIO NIO

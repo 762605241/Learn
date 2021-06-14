@@ -60,7 +60,9 @@ package leetcode.bit_operation;//编写一个函数，输入是一个无符号�
 //leetcode submit region begin(Prohibit modification and deletion)
 public class HammingWeight {
     public static void main(String[] args) {
-        System.out.println(hammingWeight(Integer.parseInt("00000011100101010000000000001011", 2)));
+//        System.out.println(hammingWeight(Integer.parseInt("00000011100101010000000000001011", 2)));
+        int i = 0xff00;
+        System.out.println(Integer.toBinaryString(i));
     }
     public static int hammingWeight(int n) {
         long l = System.nanoTime();

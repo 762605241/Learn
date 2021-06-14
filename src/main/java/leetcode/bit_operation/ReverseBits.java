@@ -67,8 +67,8 @@ import java.util.Arrays;
 //leetcode submit region begin(Prohibit modification and deletion)
 public class ReverseBits {
     public static void main(String[] args) {
-        System.out.println(reverseBits(Integer.parseInt("00000010100101000001111010011100", 2)));
-//        964176192
+//        System.out.println(reverseBits(Integer.parseInt("00000010100101000001111010011100", 2)));
+        System.out.println(Integer.reverse(43261596));
     }
 
     // you need treat n as an unsigned value
