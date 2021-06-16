@@ -5,17 +5,12 @@ import java.util.Stack;
 
 public class Test {
     public static void main(String[] args) {
-        int a = 0;
-        int b = 0;
-        breakFlag1:
-        for (int i = 0; i < 33; i++) {
-            for (int j = 0; j < 55; j++) {
-                a++;
-                continue breakFlag1;
-            }
-            b++;
-        }
-        System.out.println(a);
-        System.out.println(b);
+        String str1 = "hello";
+        String str2 = new String("hello");
+        String str3 = "hello";
+        String str4 = new String("hello");
+        System.out.println(str1.equals(str2));
+        System.out.println(str2.equals(str4));
+
     }
 }
