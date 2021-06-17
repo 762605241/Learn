@@ -102,4 +102,59 @@
 12、Integer a = 127 和 Integer b = 128
     当整型在-128到127之间时, 不会创建其包装类, 会从常量池中获取。所以int a = 127 == Integer a = 127。当大于这个范围时, 会创建对应的包装类。此时==返回false。
     这个范围可以被修改-128到更大。
-13、集合容器概念
+13、List、Set、Map
+    1、List有序集合, 顺序为存入集合顺序。允许集合内元素重复, 可以插入多个null值。常用的List集合有ArrayList、LinkedList。
+        1、实现方式
+            1、ArrayList、Vector使用Object数组实现, 可以实现动态扩容。
+            2、LinkedList使用双线链表实现。
+    2、Set无序集合, 顺序与存入集合顺序不一致。不允许有重复元素, 只可以存入一个null值。常用Set集合有HashSet、TreeSet、LinkedHashSet。
+        1、实现方式
+            1、HashSet基于HashMap实现, 采用HashMap来保存元素。
+            2、LinkedHashSet继承至HashSet, 内部基于LinkedHashSet实现。
+            3、TreeSet红黑树实现。
+    3、Map键值对集合。存储键值和二者的映射关系。key无序, 且唯一。value允许重复, 允许多个null值。通过key可以从集合中检索出对应value。
+        1、实现方式
+            1、HashMap在jdk1.8之前使用数组+链表实现。数组时HashMap的主体, 链表用来解决hash冲突。jdk1.8之后, 对解决hash冲突的链表进行改造, 当链表长度
+            大于8时, 使用红黑树代替链表, 减少元素检索时间。
+            2、LinkedHashMap继承至HashMap。
+            3、HashTable数组+链表实现。数组是HashTable主体, 链表解决hash冲突。
+            4、TreeMap使用红黑树实现。
+14、什么是Java集合的快速失败机制fail-fast?
+    1、fail-fast是Java集合的一种错误检测机制。当多个线程对集合进行结构上的并发修改的操作时, 会抛出ConcurrentModificationException, 从而会产生fail-fast机制。
+    2、原因: 迭代器在遍历时直接访问集合中的内容, 并且在遍历过程中使用modCount变量, 记录集合结构上的修改操作次数, 每当迭代器获取下一个元素时, 都会检测modCount变量
+    是否等于expectedModCount, 等于就继续遍历执行, 否则抛出异常, 终止遍历。
+    3、解决方法:
+        1、在多线程并发修改集合结构时, 增加锁, 对所有可能改变modCount值的地方都加上锁, 保证只有一个线程在改变集合。
+        2、使用CopyOnWriteArrayList来代替ArrayList保证线程安全。
+15、ArrayList和LinkedList的区别?
+    1、数据结构与实现: ArrayList使用Object数组实现, 并且支持动态扩容。而LinkedList是使用双向链表实现。
+    2、随机访问效率: ArrayList比LinkedList的效率高。ArrayList随机访问某个元素时, 只需使用下标即可定位到元素。而LinkedList随机访问某个元素时, 需要从第一个元素
+    开始遍历, 直到目标元素。
+    3、新增和删除效率: 在末尾增加元素时, 若ArrayList容量足够时, 二者效率几乎一样, 若ArrayList添加元素时需要扩容, 那么LinkedList效率较高。
+    在非末尾处增加元素时, LinkedList效率较高, 因为ArrayList需要为后面的元素移动位置。
+    4、内存空间占用: ArrayList占用空间较小。因为LinkedList使用的是双向链表实现, 每个节点除了存储元素数据外, 还要存储前后元素节点引用。
+    5、线程安全: 二者都不是线程安全。
+    6、在需要频繁读取集合元素时使用ArrayList。在频繁插入和删除时使用LinkedList。
+16、ArrayList和Vector区别?
+    1、性能: ArrayList较高。ArrayList不需要做同步操作, 非线程安全。效率更高。Vector线程安全。
+    2、扩容: ArrayList每次扩容为原来的1.5倍。Vector扩容为原来的2倍。
+17、为什么ArrayList的elementData加上transient修饰?
+    ArrayList实现了Serializable接口, 表明ArrayList支持序列化。使用transient修饰elementData, 并且重写了writeObject序列化方法, 只序列化已经保存的元素,
+    提高序列化速度, 减少序列化后的文件大小。
+18、BlockingQueue 阻塞队列 用来实现生产者消费者
+19、HashMap实现原理
+    HashMap通过数组+链表实现, 存储K-V键值对。元素顺序与插入顺序不一致。HashMap基于hash算法实现, 每次添加元素时,
+    根据key的hashCode来计算元素在数组中的位置。随着插入元素的增多, 元素的顺序会发生改变。
+    当存储元素时, hashCode相同时, key如果也相同, 则覆盖原来数组中的元素, 若key不相同, 会将元素加入到数组对应的链表中。(jdk1.8之后)当链表元素个数超过8个时, 将链表转换成红黑树, 提高查询效率。
+    当根据key获取元素时, 计算key的hashCode值, 在数组中找出相同hashCode值的元素, 判断key是否相同, 相同则直接去除数组中存储的value, 不相同则要遍历对应链表, 取值。
+    在jdk1.8之后, 当数组扩容后, 移动原来元素至新数组中, 实现做了优化。jdk1.8前, 根据新数组重新计算元素位置(扰动函数(减少hash冲突方式)计算后key的hashCode % 数组长度)。jdk1.8后新位置等于原来位置或者原来位置+原来数组长度。
+    每次扩容后容量为原来的2倍。初始化时最好设置为2的那次幂。HashMap确保容量为2的n次幂, 方便计算元素在数组中的下标(优化取模运算 n & (length - 1) 代替 n % length)。
+20、HashMap的put方法实现步骤
+    1、判断键值是否为null, 为空则进行扩容。创建HashMap时不指定容量时, 键值数组为null。
+    2、根据key计算的哈市Code得到对应插入数组位置, 如果该位置为null, 则直接插入。
+    3、数组对应位置非null, 判断两个key是否相同(equals 及 hashCode都相同)。如果相同, 则直接覆盖value。
+    4、判断数组中对应位置元素是否为红黑树节点, 是则代表该链表已经转成红黑树, 直接将该元素插入到红黑树中。
+    5、若不是红黑树节点, 证明不存在链表, 或链表长度小于8, 还未转换成红黑树。
+    6、遍历该链表, 如果插入该元素导致链表长度等于8, 那么将链表转成红黑树, 并且将元素插入到红黑树中。若没有则将该元素插入到链表的对应位置(不存在相同的key放在链表末尾, 存在相同的key直接覆盖对应的value值)。
+    7、插入成功后, 判断当前HashMap元素个数是否已经到达扩容值(threshold, 即元素个数*负载因子)。相等就扩容。
+21、HashMap如何实现扩容操作?

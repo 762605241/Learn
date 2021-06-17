@@ -90,3 +90,7 @@ BIO、NIO、AIO
 字符串创建过程
 
 字符串常量池、常量池
+
+fail-fast
+
+CopyOnWriteArrayList
