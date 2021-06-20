@@ -94,3 +94,11 @@ BIO、NIO、AIO
 fail-fast
 
 CopyOnWriteArrayList
+
+ConcurrentHashMap底层同步原理
+
+NIO实现原理
+
+多路复用IO模型
+
+类加载器 双亲委派模式
