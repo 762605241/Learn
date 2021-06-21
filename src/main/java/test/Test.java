@@ -10,8 +10,10 @@ public class Test {
     }
 
     class finalMethodTest {
+        static final  String a = "111";
         private void test() {
             System.out.println("1");
         }
     }
 }
+
