@@ -95,6 +95,8 @@ fail-fast
 
 CopyOnWriteArrayList
 
+常见的并发安全的集合对象
+
 ConcurrentHashMap底层同步原理
 
 NIO实现原理
