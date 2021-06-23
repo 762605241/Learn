@@ -9,7 +9,8 @@ public class Test {
     public static void main(String[] args) {
         ArrayList arrayList = new ArrayList();
         HashMap hashMap = new HashMap();
-        ConcurrentHashMap
+        HashSet<Integer> set = new HashSet<>();
+        set.add(1);
     }
 
     class finalMethodTest {
