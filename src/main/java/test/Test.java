@@ -7,10 +7,10 @@ import java.util.concurrent.SynchronousQueue;
 
 public class Test {
     public static void main(String[] args) {
-        ArrayList arrayList = new ArrayList();
-        HashMap hashMap = new HashMap();
-        HashSet<Integer> set = new HashSet<>();
-        set.add(1);
+        HashMap<Integer, Integer> hashMap = new HashMap<>(4);
+        hashMap.put(null, 1);
+        hashMap.put(null, 2);
+        System.out.println(hashMap.get(null));
     }
 
     class finalMethodTest {
