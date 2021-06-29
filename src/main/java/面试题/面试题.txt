@@ -1,8 +1,193 @@
 Java基础
-    jdk中使用了哪些位运算
-负载均衡
-    分类
-    实现算法 区别
-    如何设计负载均衡
+    1、String为什么是final的
+    2、HashMap和Hashtable区别
+    4、HashMap源码, 实现原理, 底层结构
+    、ConcurrentHashMap源码, 实现原理(jdk1.7 jdk1.8), 底层结构
+    、ArrayList和LinkedList区别
+    、反射中, Class.forName和classloader区别
+    、Java8有哪些新特性
+    、Java内存泄漏问题如何定位解决
+    、接口和抽象类的区别(jdk1.8)
+    、Java IO 常见类, 分类
+    、BIO、NIO、AIO
+    、实现序列化的方式
+    、
+多线程
+    、什么是线程池
+    、run方法和start方法区别
+    、常用线程池、及使用场景 ThreadPoolExecutor, ScheduledThreadPoolExecutor、ForkJoinPool
+    、多线程间通信方式及区别
+    、synchronized锁的对象、多个锁方法间的相互调用
+    、可重入锁、ReentrantLock、synchronized、LockSupport、CountdownLatch、ReadWriteLock区别
+    、volatile如何实现多线程安全、多线程可见性、防止指令重排序、为什么代码会重排序
+    、AtomicInteger
+    、wait、sleep、join区别 notify、notifyAll区别
+    、进程和线程区别
+    、JUC、常见JUC类及使用。ThreadPool、BlockingQueue深入考察
+    、如何实现一个多线程安全的程序
+    、死锁、四个必要条件、如何解决死锁、如何排查死锁、如何排查使用CPU时间最长的线程
+    、什么是多线程的上下文切换
+    、什么事线程组, 为什么不推荐使用
+    、Java中线程的调度算法
+    、Java中的Executor和Executors区别
+    、实现线程的方式
+    、Runnable、Callable、Future、FutureTask区别
+    、什么是thread dump
+    、常用集合的并发安全类ConcurrentHashMap、CopyOnWritArrayList
+    、interrupted和isInterrupted区别
+    、什么是守护线程、如何保证main线程最后结束
+    、线程状态流转过程
+    、线程池创建的几种方式
+    、Java中的CAS
+    、什么事AQS、AQS支持同步的方式
+    、自旋、自旋锁
+高并发与性能调优
+    、如何设计一个高并发的系统(如秒杀应用)、如何支撑大量的请求
+    、负载均衡 实现负载均衡的方式及区别
+    、集群如何实现同步回话状态
+    、大量数据库请求如何处理
+    、当系统出现高并发时, 如何解决服务请相应不及时的问题
+    、如何定位排查性能瓶颈原因
+    、缓存、为什么使用
+    、
+Linux
+    、常用的Linux命令
+网络
+    、http请求、无状态通信如何保持回话、请求方式有哪些、可以自定义新的请求方式么
+    、TCP如何连接(三次握手和四次挥手)、与http、UDP的区别
+    、OSI七层模型
+    、访问一个网站如www.baidu.com过程
 操作系统
-    LRU算法
+    、LRU算法
+    、数据预读
+    、局部性原理
+    、CPU调度逻辑
+    、磁盘读取逻辑
+JVM
+    、Java内存模型
+    、垃圾回收算法
+    、JVM中7个区域, 每个区域造成内存溢出的原因及解决方案
+    、类加载机制、加载顺序、双亲委派、如何自定义classloader
+    、常量池、字符串常量池
+    、JVM如何分配内存、new对象如何不分配在对上而分配到栈上
+Spring
+    、SpringMVC原理、常用注解
+    、SpringMVC DispatcherServlet工作流程
+    、Spring中beanFactory和ApplicationContext区别
+    、Spring注入的几种方式及区别、什么是循环注入
+    、Spring的IOC、AOP原理, 如何实现
+    、Spring事务管理、几种事务区别
+    、如何加载bean、如何实现bean的自动装配
+MyBatis
+    、hibernate和MyBatis
+    、MyBatis连接池
+    、MyBatis执行逻辑
+    、${} 与 #{} 区别
+    、如何实现分页、分页插件的实现原理
+    、MyBatis缓存、一级、二级缓存
+Memcached
+    、是什么, 有什么用, 如何使用
+    、Memcached服务分布式集群如何实现
+    、Memcached服务特点及工作原理
+    、Memcached与Redis区别
+Redis
+    、是什么, 有什么用, 适用场景
+    、Redis数据类型
+    、一个字符串类型的值能存储最大容量是多少
+    、Redis持久化机制及区别
+    、Redis过期键的删除策略
+    、Redis回收策略(淘汰策略)
+    、Redis集群、集群的原理、导致集群不可用的原因及如何解决、如何解决集群中读写丢失
+    、Redis哈希槽
+    、Redis事务
+    、Redis常用命令
+    、大量key同时过期
+    、异步队列
+    、
+MySQL
+    、SQL执行过程
+    、MySQL几种存储引擎及区别
+    、索引、分类、实现方式、使用方式、如何优化
+    、如何分库分表 何时分库分表、如何分库分表、分库分表带来复杂性如何解决
+    (如自增主键如何在多表实现、多表如何join查询、如何保证分布式事务、如何分页查询)
+    、读写分离如何实现 读写分离的执行过程
+    、MySQL日志 分类、作用、区别
+    、索引的数据结构 为什么使用B+树
+    、MySQL锁 分类、实现
+    、数据库事务、事务的4个特性及如何实现、事务隔离级别、数据不一致性
+    、MVCC多版本并发控制
+    、间隙锁
+    、行锁、表锁、页锁
+    、乐观锁、悲观锁
+    、MySQL调优
+    、char(10) varchar(10) int(10)的区别
+    、数据库范式
+    、主键和候选键区别
+    、哈希索引
+    、join连接查询执行过程、原理 与哈希连接的区别
+
+设计模式
+    、单例模式 实现方式及区别、那些可以并发安全
+    、工厂模式
+    、装饰者模式
+    、观察者模式
+    、项目中使用了哪些设计模式
+算法
+    、排序算法
+    、如何计算时间复杂度、空间复杂度
+    、获取随机数, 生成1-1000W之间的所有数据, 考虑高效性, 如何结局冲突
+    、两个有序数组的合并排序
+    、一个数组的倒序
+    、计算一个正整数的平方根
+    、二叉树的遍历算法(递归、非递归)
+    、DFS、BFS
+    、逆波兰计算器
+    、哈夫曼算法、哈夫曼编码
+数据结构
+    、List、Map、Set区别
+    、红黑树
+微服务
+    、什么是微服务、微服务有什么优势
+    、单片、SOA和微服务的区别
+    、什么是领域驱动设计
+    、什么是REST、RESTFul
+    、什么是Spring引导执行器
+SpringBoot
+    、什么是SpringBoot
+    、什么是JavaConfig
+    、如何重新加载SpringBoot上的更改, 而无需重新启动服务
+    、什么是监视器
+    、什么是YAML
+    、CSRF攻击
+SpringCloud
+    、什么是服务注册与发现
+    、什么是Hystrix, 如何实现容错
+    、什么是Hystrix断路器
+    、如何搭建微服务集群, 如何负载微服务接口
+    、什么是Netflix Feign
+Nginx
+    、原理、如何实现负载均衡
+    、负载均衡算法
+RabbitMQ
+    、什么是RabbitMQ、使用场景
+    、如何确保消息正确地发送到RabbitMQ, 如何保证消息接收方消费了消息
+    、如何确保消息不丢失、如何避免消息重复投递、如何避免消息重复消费
+    、消息基于什么传输
+    、消息如何分发、消息如何路由
+    、搭建RabbitMQ集群
+    、RabbitMQ和kafka的区别
+kafka
+    、什么是kafka
+    、如何获取topic主题的列表
+    、生产者和消费者的命令行是什么
+    、consumer是推还是拉
+    、kafka维护消费状态跟踪的方法
+    、什么是主从同步
+    、Zookeeper对kafka的作用
+    、数据传输的事务
+    、如何判断结点是否存活
+    、kafka的ack机制
+    、活锁问题
+    、kafka分布式集群中, 如何保证消息的消费顺序
+    、kafka的高可用机制是什么
+    、kafka如何减少数据丢失、如何解决重复消费
