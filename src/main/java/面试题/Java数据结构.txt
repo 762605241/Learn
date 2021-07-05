@@ -8,4 +8,9 @@
 2、HashMap底层实现, HashMap容量为什么是2的正整数次幂
 3、HashMap与Hashtable区别
 4、ConcurrentHashMap底层实现 jdk1.7与jdk1.8
-5、
+5、TreeMap底层
+6、HashMap扩容过程
+7、HashMap如何保证不重复
+8、HashMap死循环问题
+9、LinkedHashMap底层原理
+10、fail-fast和fail-safe
