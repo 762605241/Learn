@@ -1,0 +1,11 @@
+1、ArrayList与LinkedList区别
+    1、是否线程安全
+    2、底层实现原理
+    3、适用场景: ArrayList实现了RandomAccess(标记接口)支持快速访问, 实际通过数组下标访问实现。
+    4、内存占用: ArrayList使用数组实现, 初始化时一次性创建整个数组, 并且默认负载因子为0.75, 导致一部分空间创建了但并不会使用, 造成空间浪费。
+        LinkedList在添加一个元素时, 创建一个空间, 而且整个存储空间可以是碎片化的, 并不需要和之前的元素空间连续。但是LinkedList的每个元素较ArrayList要更大,
+        因为要保存前驱和后继元素的引用。
+2、HashMap底层实现, HashMap容量为什么是2的正整数次幂
+3、HashMap与Hashtable区别
+4、ConcurrentHashMap底层实现 jdk1.7与jdk1.8
+5、

@@ -8,9 +8,7 @@ import java.util.concurrent.SynchronousQueue;
 
 public class Test {
     public static void main(String[] args) {
-        int[] a = {1, 3, 4, 7};
-        test(a);
-        System.out.println(Arrays.toString(a));
+
     }
 
     private static void test(int[] s) {
