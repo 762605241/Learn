@@ -14,3 +14,8 @@
 8、HashMap死循环问题
 9、LinkedHashMap底层原理
 10、fail-fast和fail-safe
+11、HashMap为什么元素个数小于64优先扩容
+   https://www.it610.com/article/1289112610570051584.htm
+   为什么链表长度大于等于8才会转成红黑树? 为什么链表长度小于等于6会转成链表?
+   ConcurrentHashMap底层同步原理
+12、
