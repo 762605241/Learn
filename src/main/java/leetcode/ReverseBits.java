@@ -1,4 +1,4 @@
-package leetcode.bit_operation;
+package leetcode;
 //颠倒给定的 32 位无符号整数的二进制位。
 //
 // 

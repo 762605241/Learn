@@ -28,75 +28,7 @@ Java基础
     、Iterator和ListIterator
     、动态代理、静态代理 及二者实现方式
 
-多线程
-    、什么是线程池
-    、线程池的submit和execute方法的区别
-    、run方法和start方法区别
-    、线程池是什么, 有什么好处, 常用线程池、及使用场景 ThreadPoolExecutor, ScheduledThreadPoolExecutor、ForkJoinPool
-    、创建线程池的参数(ThreadPoolExecutor)
-    、如何关闭线程池
-    、线程池的选择策略
-    、阻塞队列有哪些
-    、线程池之间的处理流程
-    、多线程间通信方式及区别
-    、synchronized锁的对象、多个锁方法间的相互调用
-    、可重入锁、ReentrantLock、synchronized、LockSupport、CountdownLatch、ReadWriteLock区别
-    、ReentrantLock的公平性与非公平性
-    、ReentrantLock如何实现可重入性
-    、什么是读写锁
-    、volatile如何实现多线程安全、多线程可见性、防止指令重排序、为什么代码会重排序、volatile内存模型
-    、AtomicInteger、原子类如何实现
-    、wait、sleep、join区别 notify、notifyAll区别
-    、进程和线程区别
-    、JUC、常见JUC类及使用。ThreadPool、BlockingQueue深入考察
-    、什么是CAS
-    、CyclicBarrier是什么
-    、Semaphore是什么
-    、Exchanger是什么
-    、JMM是什么、有什么作用
-    、as-if-serial、happens-before是什么, 有什么区别
-    、原子性、可见性、有序性分别是什么
-    、final可以保证可见性么
-    、锁优化策略
-    、如何实现一个多线程安全的程序
-    、死锁、四个必要条件、如何解决死锁、如何排查死锁、如何排查使用CPU时间最长的线程
-    、什么是多线程的上下文切换
-    、什么事线程组, 为什么不推荐使用
-    、Java中线程的调度算法
-    、Java中的Executor和Executors区别
-    、实现线程的方式
-    、Runnable、Callable、Future、FutureTask区别
-    、什么是thread dump
-    、常用集合的并发安全类ConcurrentHashMap、CopyOnWritArrayList
-    、interrupted和isInterrupted区别
-    、什么是守护线程、如何保证main线程最后结束
-    、线程状态流转过程
-    、线程池创建的几种方式
-    、Java中的CAS
-    、什么事AQS、AQS支持同步的方式
-    、自旋、自旋锁、自适应自旋锁
-    、什么是锁消除
-    、什么是锁粗化
-    、偏向锁、轻量级锁、重量级锁分别是什么, 有什么区别
-    、Lock和Synchronized区别
-    、什么是AQS, 两种模式是什么, 独占式获取和释放锁的原理, 共享锁获取和释放锁的原理
-    、线程的生命周期
-    、线程的创建方式
-    、ThreadLocal
-    、多线程的内存模型、执行过程
-    、并发与并行的区别
-高并发与性能调优
-    、如何设计一个高并发的系统(如秒杀应用)、如何支撑大量的请求
-    、负载均衡 实现负载均衡的方式及区别
-    、集群如何实现同步回话状态
-    、大量数据库请求如何处理
-    、当系统出现高并发时, 如何解决服务请相应不及时的问题
-    、如何定位排查性能瓶颈原因
-    、缓存、为什么使用
-    、流量在某一时刻暴涨、然后又暴跌如何应对
-    、如何实现分布式锁
-    、分布式中Session如何实现
-    、如何解决分布式事务
+
 Linux
     、常用的Linux命令
 网络
